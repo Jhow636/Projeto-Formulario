@@ -1,0 +1,14 @@
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\bin\Debug\GridView.exe.config
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\bin\Debug\GridView.exe
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\bin\Debug\GridView.pdb
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.csproj.AssemblyReference.cache
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.csproj.SuggestedBindingRedirects.cache
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.Properties.Resources.resources
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.csproj.GenerateResource.cache
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.csproj.CoreCompileInputs.cache
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.exe
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.pdb
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.FormPrincipal.resources
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.Forms.CsvForm.resources
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.Forms.JsonForm.resources
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.Forms.XmlForm.resources
