@@ -99,6 +99,7 @@ namespace GridView.Forms
         }
         private void ConfigurandoDatTable()
         {
+            
             dt.Columns.Add("ID", typeof(Int32));
             dt.Columns.Add("COD_INTERNO", typeof(string));
             dt.Columns.Add("EQUIPAMENTO", typeof(string));
@@ -129,7 +130,20 @@ namespace GridView.Forms
         {
             if (ValidarCampos())
             {
-                dt.Rows.Add(Convert.ToInt32(txtID.Text), txtCodItern.Text, txtEquipamentos.Text, Convert.ToInt32(txtEstMax.Text), Convert.ToInt32(txtEstMin.Text), Convert.ToInt32(txtQtde.Text));
+                try
+                {
+                    dt.Rows.Add(Convert.ToInt32(txtID.Text), txtCodItern.Text, txtEquipamentos.Text, Convert.ToInt32(txtEstMax.Text), Convert.ToInt32(txtEstMin.Text), Convert.ToInt32(txtQtde.Text));
+                    txtID.Text = null;
+                    txtCodItern.Text = null;
+                    txtEquipamentos.Text = null;
+                    txtEstMax.Text = null;
+                    txtEstMin.Text = null;
+                    txtQtde.Text = null;
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Campos: ID, EST_MAX, EST_MIN, QTDE, Devem ser inseridos em formato numérico", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
@@ -139,16 +153,29 @@ namespace GridView.Forms
 
         private void tbtnEditar_Click(object sender, EventArgs e)
         {
-            int rowIndex = dataGridView.CurrentRow.Index;          
+            int rowIndex = dataGridView.CurrentRow.Index;
             if (ValidarCampos())
             {
                 //Altera o valor da linha selecionada para os novos valores escritos
-                dt.Rows[rowIndex].SetField(0, Convert.ToInt32(txtID.Text));
-                dt.Rows[rowIndex].SetField(1, txtCodItern.Text);
-                dt.Rows[rowIndex].SetField(2, txtEquipamentos.Text);
-                dt.Rows[rowIndex].SetField(3, Convert.ToInt32(txtEstMax.Text));
-                dt.Rows[rowIndex].SetField(4, Convert.ToInt32(txtEstMin.Text));
-                dt.Rows[rowIndex].SetField(5, Convert.ToInt32(txtQtde.Text));
+                try
+                {
+                    dt.Rows[rowIndex].SetField(0, Convert.ToInt32(txtID.Text));
+                    dt.Rows[rowIndex].SetField(1, txtCodItern.Text);
+                    dt.Rows[rowIndex].SetField(2, txtEquipamentos.Text);
+                    dt.Rows[rowIndex].SetField(3, Convert.ToInt32(txtEstMax.Text));
+                    dt.Rows[rowIndex].SetField(4, Convert.ToInt32(txtEstMin.Text));
+                    dt.Rows[rowIndex].SetField(5, Convert.ToInt32(txtQtde.Text));
+                    txtID.Text = null;
+                    txtCodItern.Text = null;
+                    txtEquipamentos.Text = null;
+                    txtEstMax.Text = null;
+                    txtEstMin.Text = null;
+                    txtQtde.Text = null;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Campos: ID, EST_MAX, EST_MIN, QTDE, Devem ser inseridos em formato numérico", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
@@ -160,6 +187,32 @@ namespace GridView.Forms
         {
             int rowIndex = dataGridView.CurrentRow.Index;
             dt.Rows[rowIndex].Delete();
+        }
+
+        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //Evento que é disparado quando o cursor do texto sai de uma célula em um DataGridView
+            if (dataGridView.CurrentCell != null)
+            {               
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // verifica se a célula clicada não é o cabeçalho
+                {
+                        var cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        var valor = cell.Value;
+                        dt.Rows[e.RowIndex][e.ColumnIndex] = valor;
+                }
+            }           
+        }
+
+        private void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // Mensagem de erro personalizada
+            MessageBox.Show("Erro ao inserir valor na célula " + e.ColumnIndex + "-" + e.RowIndex + ": " + e.Exception.Message);
+
+            // Corrigir valor automaticamente
+            e.Cancel = true;
+            e.ThrowException = false;
+            var valor = dataGridView[e.ColumnIndex, e.RowIndex].Value;
+            dt.Rows[e.RowIndex][e.ColumnIndex] = 0;
         }
     }
 }
