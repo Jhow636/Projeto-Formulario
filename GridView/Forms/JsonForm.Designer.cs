@@ -221,6 +221,7 @@
             this.Controls.Add(this.txtID);
             this.Name = "JsonForm";
             this.Text = "JsonForm";
+            this.Load += new System.EventHandler(this.JsonForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

@@ -43,6 +43,7 @@ namespace GridView
             {
                 JsonForm frm = new JsonForm();
                 frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
             }
             else

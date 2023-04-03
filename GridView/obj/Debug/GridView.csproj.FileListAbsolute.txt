@@ -12,3 +12,6 @@ C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.FormPrinc
 C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.Forms.CsvForm.resources
 C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.Forms.JsonForm.resources
 C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.Forms.XmlForm.resources
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\bin\Debug\Newtonsoft.Json.xml
+C:\Users\alves\Desktop\Estudos C#\GridView\GridView\obj\Debug\GridView.csproj.CopyComplete

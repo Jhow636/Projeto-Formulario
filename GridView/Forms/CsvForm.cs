@@ -52,10 +52,6 @@ namespace GridView.Forms
                 return true;
             }
         }
-        private void RescreverArquivo()
-        {
-
-        }
         public CsvForm()
         {
             InitializeComponent();
